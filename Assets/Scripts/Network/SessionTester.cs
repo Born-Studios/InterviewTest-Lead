@@ -44,10 +44,12 @@ namespace Born.InterviewTest.Network
                 if (updatePlayerName)
                 {
                     // Add player name update to UpdateData message.
+                    updateData = new(playerName:playerName);
                 }
                 if (updateAvatarId)
                 {
                     // Add avatar id update to UpdateData message.
+                    updateData = new(playerName: updateData.PlayerName, avatarId:avatarId);
                 }
                 
                 testMessageReceiver.ReceiveTestMessage(updateData);
