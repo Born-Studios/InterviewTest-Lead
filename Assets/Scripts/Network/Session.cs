@@ -14,13 +14,16 @@ namespace Born.InterviewTest.Network
         private const string Password = "Not-A-Secret";
 
         private readonly Connection connection;
-        
-        public Session()
+        private readonly PlayerData playerData;
+
+        public Session(PlayerData playerData)
         {
             connection = new Connection();
             connection.MessageReceived += OnMessageReceived;
             connection.Opened += OnConnectionOpened;
             connection.Open();
+
+            this.playerData = playerData;
         }
 
         public bool HasJoinedSession { get; private set; }
@@ -45,6 +48,8 @@ namespace Born.InterviewTest.Network
                 
                 case UpdateData updateData:
                     // Process message to update the local data elements that are being updated by the message. 
+                    playerData.UpdatePlayerName(updateData.PlayerName);
+                    playerData.UpdateAvatarId(updateData.AvatarId);
                     break;
             }
         }
