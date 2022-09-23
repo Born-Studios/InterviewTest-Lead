@@ -378,6 +378,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   avatarRoot: {fileID: 412500108}
+  avatarPrefabs:
+  - {fileID: 4321254794790934708, guid: 2c54ab9b97e768e4fbca3d356a180bc8, type: 3}
+  - {fileID: 4321254794790934708, guid: ad165a1f9bcae1946899bf630d9961ce, type: 3}
 --- !u!1 &1256741918
 GameObject:
   m_ObjectHideFlags: 0
@@ -731,5 +734,7 @@ MonoBehaviour:
   hasJoined: 0
   acceptJoinRequest: 0
   playerName: 
+  updatePlayerName: 0
   avatarId: 0
-  updatePlayerData: 0
+  updateAvatarId: 0
+  sendDataUpdate: 0
